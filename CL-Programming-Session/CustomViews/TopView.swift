@@ -40,7 +40,6 @@ class TopView: UIView, CustomViewContainer {
     }()
 
     func viewRotated(to orientation: ViewOrientation) {
-        debugPrint(orientation)
         if(orientation == .portrait){
             self.collectionViewLayout.itemSize = CGSize(width: self.frame.width * 0.8, height: self.frame.height)
             setNeedsLayout()
