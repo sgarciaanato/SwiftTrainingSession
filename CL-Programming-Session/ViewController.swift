@@ -100,9 +100,11 @@ class ViewController: UIViewController {
             UIView.animate(withDuration: 0.1) {
                 if(self.view.frame.size.height > self.view.frame.size.width){
                     self.topView.viewRotated(to: .portrait)
+                    self.middleView.viewRotated(to: .portrait)
                 }
                 else{
                     self.topView.viewRotated(to: .landscape)
+                    self.middleView.viewRotated(to: .landscape)
                 }
             }
         }

@@ -20,6 +20,7 @@
 		C70E8D992CE500E600B22025 /* BotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70E8D982CE500E600B22025 /* BotView.swift */; };
 		C70E8D9C2CE507FC00B22025 /* ProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70E8D9B2CE507FC00B22025 /* ProductCell.swift */; };
 		C70E8D9E2CE5089C00B22025 /* CustomCellContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70E8D9D2CE5089C00B22025 /* CustomCellContainer.swift */; };
+		C70E8DA02CE529BB00B22025 /* ProductView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70E8D9F2CE529BB00B22025 /* ProductView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		C70E8D982CE500E600B22025 /* BotView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BotView.swift; sourceTree = "<group>"; };
 		C70E8D9B2CE507FC00B22025 /* ProductCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCell.swift; sourceTree = "<group>"; };
 		C70E8D9D2CE5089C00B22025 /* CustomCellContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCellContainer.swift; sourceTree = "<group>"; };
+		C70E8D9F2CE529BB00B22025 /* ProductView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +109,7 @@
 				C70E8D942CE4FFD200B22025 /* CustomViewContainer.swift */,
 				C70E8D962CE500D800B22025 /* MiddleView.swift */,
 				C70E8D982CE500E600B22025 /* BotView.swift */,
+				C70E8D9F2CE529BB00B22025 /* ProductView.swift */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -194,6 +197,7 @@
 				C70E8D7C2CE449F100B22025 /* ViewController.swift in Sources */,
 				C70E8D992CE500E600B22025 /* BotView.swift in Sources */,
 				C70E8D9E2CE5089C00B22025 /* CustomCellContainer.swift in Sources */,
+				C70E8DA02CE529BB00B22025 /* ProductView.swift in Sources */,
 				C70E8D952CE4FFD200B22025 /* CustomViewContainer.swift in Sources */,
 				C70E8D902CE4587900B22025 /* Product.swift in Sources */,
 				C70E8D782CE449F100B22025 /* AppDelegate.swift in Sources */,
