@@ -93,5 +93,18 @@ class ViewController: UIViewController {
             botView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
         ])
     }
-}
 
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to: size, with: coordinator)
+        coordinator.animate { _ in } completion: { _ in
+            UIView.animate(withDuration: 0.1) {
+                if(self.view.frame.size.height > self.view.frame.size.width){
+                    self.topView.viewRotated(to: .portrait)
+                }
+                else{
+                    self.topView.viewRotated(to: .landscape)
+                }
+            }
+        }
+    }
+}

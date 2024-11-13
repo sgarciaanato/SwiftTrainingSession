@@ -37,4 +37,6 @@ class MiddleView: UIView, CustomViewContainer {
 
         return label
     }()
+
+    func viewRotated(to orientation: ViewOrientation) {}
 }

@@ -7,6 +7,12 @@
 
 import UIKit
 
+enum ViewOrientation {
+    case landscape
+    case portrait
+}
+
 protocol CustomViewContainer: UIView {
     var products: [Product]? { get set }
+    func viewRotated(to orientation: ViewOrientation)
 }
