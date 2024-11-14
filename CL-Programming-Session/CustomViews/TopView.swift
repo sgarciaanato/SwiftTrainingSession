@@ -25,6 +25,7 @@ class TopView: UIView, CustomViewContainer {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: self.collectionViewLayout)
         addSubview(collectionView)
         collectionView.translatesAutoresizingMaskIntoConstraints = false
+        collectionView.backgroundColor = .clear
         collectionView.register(ProductCell.self, forCellWithReuseIdentifier: ProductCell.reusableIdentifier)
         collectionView.delegate = self
         collectionView.dataSource = self
