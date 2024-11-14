@@ -83,6 +83,7 @@ class ViewController: UIViewController {
         view.addSubview(childView.view)
         childView.view.frame = CGRect(x: 0, y: view.frame.height * 2 / 3, width: view.frame.width, height: view.frame.height / 3)
         childView.didMove(toParent: self)
+        childView.view.backgroundColor = .cyan
     }
 
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {

@@ -23,7 +23,6 @@ struct DeckView: View {
                     ProductCardView(product: product)
                         .frame(width: 200, height: 200)
                         .cornerRadius(10)
-                        .padding(10)
                         .id(product)
                         .visualEffect { content, proxy in
                             content
@@ -34,7 +33,10 @@ struct DeckView: View {
                         }
                         .zIndex(products.zIndex(product))
                 }
+                .shadow(radius: 1)
+                .foregroundStyle(.black)
             }
+            .padding(.vertical, 40)
         }
         .safeAreaPadding(.horizontal, 100)
         .scrollTargetLayout()
@@ -42,7 +44,6 @@ struct DeckView: View {
         .scrollBounceBehavior(.basedOnSize)
         .scrollPosition(id: Binding($products), anchor: .center)
         .animation(.smooth, value: products)
-        .frame(alignment: .center)
     }
 
     func minX(_ proxy: GeometryProxy) -> CGFloat {

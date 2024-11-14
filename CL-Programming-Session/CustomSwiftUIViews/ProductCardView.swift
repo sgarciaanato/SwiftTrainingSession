@@ -12,13 +12,11 @@ struct ProductCardView: View {
 
     var body: some View {
         ZStack {
-            ZStack {
-                RoundedRectangle(cornerRadius: 8)
-                    .fill(Color.green)
-                VStack {
-                    ProductImageView(imageUrlString: product.image)
-                    ProductTitleView(title: product.title)
-                }
+            RoundedRectangle(cornerRadius: 8)
+                .fill(Color(UIColor.systemBackground))
+            VStack {
+                ProductImageView(imageUrlString: product.image)
+                ProductTitleView(title: product.title)
             }
         }
     }
