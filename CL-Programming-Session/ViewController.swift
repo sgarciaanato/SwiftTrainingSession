@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SwiftUI
 
 class ViewController: UIViewController {
 
@@ -26,13 +27,6 @@ class ViewController: UIViewController {
         return view
     }()
 
-    let botView: CustomViewContainer = {
-        let view = BotView()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = .cyan
-        return view
-    }()
-
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.systemBackground
@@ -46,7 +40,7 @@ class ViewController: UIViewController {
                 DispatchQueue.main.async {
                     self.topView.products = products
                     self.middleView.products = products
-                    self.botView.products = products
+                    self.configureBotView(products: products)
                 }
             case .failure(let error):
                 debugPrint(error)
@@ -58,7 +52,6 @@ class ViewController: UIViewController {
     func configureViews() {
         configureTopView()
         configureMiddleView()
-        configureBotView()
     }
 
     func configureTopView() {
@@ -83,15 +76,13 @@ class ViewController: UIViewController {
         ])
     }
 
-    func configureBotView() {
-        view.addSubview(botView)
-
-        NSLayoutConstraint.activate([
-            botView.topAnchor.constraint(equalTo: middleView.bottomAnchor),
-            botView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            botView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            botView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
-        ])
+    func configureBotView(products: [Product]) {
+        let deckView = DeckView(products: products)
+        let childView = UIHostingController(rootView: deckView)
+        addChild(childView)
+        view.addSubview(childView.view)
+        childView.view.frame = CGRect(x: 0, y: view.frame.height * 2 / 3, width: view.frame.width, height: view.frame.height / 3)
+        childView.didMove(toParent: self)
     }
 
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
