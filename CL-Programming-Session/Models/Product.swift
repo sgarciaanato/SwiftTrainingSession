@@ -5,6 +5,8 @@
 //  Created by Samuel Garcia on 13-11-24.
 //
 
+import SwiftUI
+
 struct Product: Codable, Hashable {
     let id: Int
     let title: String
@@ -42,5 +44,14 @@ struct Rating: Codable {
         var container = encoder.container(keyedBy: CodingKeys.self)
         try container.encode(rate, forKey: .rate)
         try container.encode(count, forKey: .count)
+    }
+}
+
+extension [Product] {
+    func zIndex(_ product: Product) -> CGFloat {
+        if let index = firstIndex(where: { $0.id == product.id }) {
+            return CGFloat(count) - CGFloat(CFloat(index))
+        }
+        return .zero
     }
 }
